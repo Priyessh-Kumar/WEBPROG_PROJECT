@@ -30,7 +30,7 @@ body {
   font-family: "Heebo", "Manrope", sans-serif;
   color: var(--text);
   background:
-    linear-gradient(180deg, #0e2e50 0px, #0e2e50 560px, var(--bg) 560px, var(--bg) 100%);
+    linear-gradient(180deg, #0e2e50 0px, #0e2e50 860px, var(--bg) 860px, var(--bg) 100%);
   position: relative;
 }
 
@@ -48,7 +48,7 @@ body::before {
   top: 0;
   left: 0;
   width: 100%;
-  height: 620px;
+  height: 860px;
   border-radius: 0;
   background:
     radial-gradient(circle at 82% 18%, rgba(0, 185, 142, 0.2), transparent 20%),
@@ -58,7 +58,7 @@ body::before {
 }
 
 body::after {
-  top: 500px;
+  top: 780px;
   left: 0;
   width: 100%;
   height: 120px;
@@ -265,6 +265,7 @@ a {
   max-width: 55ch;
   font-size: 1.02rem;
   color: rgba(255, 255, 255, 0.82);
+  margin-bottom: 28px;
 }
 
 .hero-links,
@@ -316,6 +317,7 @@ a {
 .hero__card h2 {
   font-size: clamp(2.1rem, 4vw, 3.5rem);
   max-width: unset;
+  color: var(--secondary-deep);
 }
 
 .hero__stats {
@@ -557,9 +559,15 @@ textarea {
 }
 
 .button--ghost {
+  background: rgba(14, 46, 80, 0.06);
+  color: var(--secondary-deep);
+  border: 2px solid rgba(14, 46, 80, 0.12);
+}
+
+.hero .button--ghost {
   background: transparent;
   color: #ffffff;
-  border: 2px solid rgba(255, 255, 255, 0.7);
+  border-color: rgba(255, 255, 255, 0.7);
 }
 
 .button--tiny {
