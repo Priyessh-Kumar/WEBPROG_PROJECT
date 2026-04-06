@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LedgerLeaf | Settings</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="settings">
+  <div class="page-shell">
+    <header class="topbar">
+      <div class="brand-lockup">
+        <div class="identity-badge">
+          <strong>S. Priyessh Kumar</strong>
+          <span>24BCE5273</span>
+        </div>
+        <div>
+          <p class="eyebrow">LedgerLeaf Suite</p>
+          <h1 class="brand-title">Settings & Data Tools</h1>
+        </div>
+      </div>
+      <nav class="nav-pills" aria-label="Primary">
+        <a class="nav-pill" href="index.html">Dashboard</a>
+        <a class="nav-pill" href="reports.html">Reports</a>
+        <a class="nav-pill" href="planner.html">Planner</a>
+        <a class="nav-pill is-active" href="settings.html">Settings</a>
+      </nav>
+    </header>
+
+    <section class="subhero">
+      <div>
+        <p class="eyebrow">Control Room</p>
+        <h2>Manage your records, planning data, and portfolio identity.</h2>
+      </div>
+    </section>
+
+    <main class="dashboard">
+      <section class="content-grid content-grid--reports">
+        <section class="panel">
+          <div class="panel__header">
+            <div>
+              <p class="section-kicker">Profile</p>
+              <h2>Owner details</h2>
+            </div>
+          </div>
+          <div class="mini-metrics">
+            <article>
+              <span>Name</span>
+              <strong>S. Priyessh Kumar</strong>
+            </article>
+            <article>
+              <span>Registration number</span>
+              <strong>24BCE5273</strong>
+            </article>
+            <article>
+              <span>Workspace mode</span>
+              <strong>Offline local manager</strong>
+            </article>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="panel__header">
+            <div>
+              <p class="section-kicker">Storage</p>
+              <h2>Local data summary</h2>
+            </div>
+          </div>
+          <div class="mini-metrics">
+            <article>
+              <span>Transactions stored</span>
+              <strong id="settingsTransactionCount">0</strong>
+            </article>
+            <article>
+              <span>Budget</span>
+              <strong id="settingsBudget">&#8377;0.00</strong>
+            </article>
+            <article>
+              <span>Planner goal</span>
+              <strong id="settingsGoal">Not set</strong>
+            </article>
+          </div>
+        </section>
+      </section>
+
+      <section class="content-grid content-grid--reports">
+        <section class="panel">
+          <div class="panel__header">
+            <div>
+              <p class="section-kicker">Backup</p>
+              <h2>Export or import data</h2>
+            </div>
+          </div>
+          <div class="settings-actions">
+            <button id="exportDataBtn" class="button button--primary" type="button">Export data</button>
+            <label class="file-button">
+              <span class="button button--ghost">Import data</span>
+              <input id="importDataInput" type="file" accept="application/json">
+            </label>
+          </div>
+          <p id="settingsMessage" class="muted">Use export to save a backup of your current transactions and planner settings.</p>
+        </section>
+
+        <section class="panel danger-panel">
+          <div class="panel__header">
+            <div>
+              <p class="section-kicker">Reset</p>
+              <h2>Danger zone</h2>
+            </div>
+          </div>
+          <p class="muted">This removes transactions, budget values, and planner targets from local storage on this browser.</p>
+          <button id="resetDataBtn" class="button button--danger" type="button">Reset all data</button>
+        </section>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

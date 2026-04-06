@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LedgerLeaf | Reports</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="reports">
+  <div class="page-shell">
+    <header class="topbar">
+      <div class="brand-lockup">
+        <div class="identity-badge">
+          <strong>S. Priyessh Kumar</strong>
+          <span>24BCE5273</span>
+        </div>
+        <div>
+          <p class="eyebrow">LedgerLeaf Suite</p>
+          <h1 class="brand-title">Reports & Analytics</h1>
+        </div>
+      </div>
+      <nav class="nav-pills" aria-label="Primary">
+        <a class="nav-pill" href="index.html">Dashboard</a>
+        <a class="nav-pill is-active" href="reports.html">Reports</a>
+        <a class="nav-pill" href="planner.html">Planner</a>
+        <a class="nav-pill" href="settings.html">Settings</a>
+      </nav>
+    </header>
+
+    <section class="subhero">
+      <div>
+        <p class="eyebrow">Performance View</p>
+        <h2>Understand trends beyond a single transaction list.</h2>
+      </div>
+      <label class="month-picker">
+        <span>Reporting month</span>
+        <input id="reportsMonth" type="month">
+      </label>
+    </section>
+
+    <main class="dashboard">
+      <section class="stats-grid">
+        <article class="stat-card">
+          <p>Net result</p>
+          <h3 id="reportNet">&#8377;0.00</h3>
+        </article>
+        <article class="stat-card">
+          <p>Average expense</p>
+          <h3 id="reportAverageExpense">&#8377;0.00</h3>
+        </article>
+        <article class="stat-card">
+          <p>Top category</p>
+          <h3 id="reportTopCategory">None</h3>
+        </article>
+        <article class="stat-card">
+          <p>Savings rate</p>
+          <h3 id="reportSavingsRate">0%</h3>
+        </article>
+      </section>
+
+      <section class="content-grid content-grid--reports">
+        <section class="panel">
+          <div class="panel__header">
+            <div>
+              <p class="section-kicker">Recent Months</p>
+              <h2>Monthly comparison</h2>
+            </div>
+          </div>
+          <div id="monthlyTable" class="table-shell"></div>
+        </section>
+
+        <section class="panel">
+          <div class="panel__header">
+            <div>
+              <p class="section-kicker">Payment Mix</p>
+              <h2>Methods in use</h2>
+            </div>
+          </div>
+          <div id="paymentMethodList" class="insights-list"></div>
+        </section>
+      </section>
+
+      <section class="content-grid content-grid--reports">
+        <section class="panel">
+          <div class="panel__header">
+            <div>
+              <p class="section-kicker">Spending Drivers</p>
+              <h2>Largest expenses</h2>
+            </div>
+          </div>
+          <div id="largestExpensesList" class="transaction-list"></div>
+        </section>
+
+        <section class="panel">
+          <div class="panel__header">
+            <div>
+              <p class="section-kicker">Category Heatmap</p>
+              <h2>Month category totals</h2>
+            </div>
+          </div>
+          <div id="reportsCategoryList" class="insights-list"></div>
+        </section>
+      </section>
+    </main>
+  </div>
+
+  <template id="reportRowTemplate">
+    <div class="table-row">
+      <span class="row-month"></span>
+      <span class="row-income"></span>
+      <span class="row-expenses"></span>
+      <span class="row-net"></span>
+    </div>
+  </template>
+
+  <template id="metricItemTemplate">
+    <article class="insight-item">
+      <div class="insight-item__head">
+        <h3 class="insight-category"></h3>
+        <strong class="insight-value"></strong>
+      </div>
+      <div class="progress-track" aria-hidden="true">
+        <div class="insight-bar"></div>
+      </div>
+    </article>
+  </template>
+
+  <template id="expenseItemTemplate">
+    <article class="transaction-item">
+      <div class="transaction-item__main">
+        <div class="transaction-item__top">
+          <h3 class="transaction-title"></h3>
+          <p class="transaction-amount expense"></p>
+        </div>
+        <div class="transaction-meta"></div>
+        <p class="transaction-notes"></p>
+      </div>
+    </article>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>

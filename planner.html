@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LedgerLeaf | Planner</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="planner">
+  <div class="page-shell">
+    <header class="topbar">
+      <div class="brand-lockup">
+        <div class="identity-badge">
+          <strong>S. Priyessh Kumar</strong>
+          <span>24BCE5273</span>
+        </div>
+        <div>
+          <p class="eyebrow">LedgerLeaf Suite</p>
+          <h1 class="brand-title">Planning Workspace</h1>
+        </div>
+      </div>
+      <nav class="nav-pills" aria-label="Primary">
+        <a class="nav-pill" href="index.html">Dashboard</a>
+        <a class="nav-pill" href="reports.html">Reports</a>
+        <a class="nav-pill is-active" href="planner.html">Planner</a>
+        <a class="nav-pill" href="settings.html">Settings</a>
+      </nav>
+    </header>
+
+    <section class="subhero">
+      <div>
+        <p class="eyebrow">Future View</p>
+        <h2>Turn current spending behavior into practical next steps.</h2>
+      </div>
+    </section>
+
+    <main class="dashboard">
+      <section class="layout-grid">
+        <section class="panel">
+          <div class="panel__header">
+            <div>
+              <p class="section-kicker">Goal Setup</p>
+              <h2>Financial planner</h2>
+            </div>
+          </div>
+          <form id="plannerForm" class="transaction-form">
+            <div class="form-grid">
+              <label>
+                <span>Monthly income target</span>
+                <input id="plannerIncomeTarget" type="number" min="0" step="0.01" placeholder="Expected monthly income">
+              </label>
+              <label>
+                <span>Monthly savings target</span>
+                <input id="plannerSavingsTarget" type="number" min="0" step="0.01" placeholder="How much to save">
+              </label>
+              <label>
+                <span>Emergency fund target</span>
+                <input id="plannerEmergencyTarget" type="number" min="0" step="0.01" placeholder="Goal amount">
+              </label>
+              <label>
+                <span>Goal name</span>
+                <input id="plannerGoalName" type="text" placeholder="Laptop fund, travel fund...">
+              </label>
+              <label>
+                <span>Goal amount</span>
+                <input id="plannerGoalAmount" type="number" min="0" step="0.01" placeholder="Target amount">
+              </label>
+              <label>
+                <span>Target month</span>
+                <input id="plannerGoalMonth" type="month">
+              </label>
+            </div>
+            <div class="form-actions">
+              <button class="button button--primary" type="submit">Save plan</button>
+            </div>
+          </form>
+        </section>
+
+        <section class="stack-grid">
+          <section class="panel">
+            <div class="panel__header">
+              <div>
+                <p class="section-kicker">Plan Health</p>
+                <h2>Forecast</h2>
+              </div>
+            </div>
+            <div class="mini-metrics">
+              <article>
+                <span>Average monthly savings</span>
+                <strong id="plannerAvgSavings">&#8377;0.00</strong>
+              </article>
+              <article>
+                <span>Recommended max spend</span>
+                <strong id="plannerSpendCap">&#8377;0.00</strong>
+              </article>
+              <article>
+                <span>Goal timeline</span>
+                <strong id="plannerTimeline">Set a plan</strong>
+              </article>
+            </div>
+          </section>
+
+          <section class="panel">
+            <div class="panel__header">
+              <div>
+                <p class="section-kicker">Goal Progress</p>
+                <h2>How close are you?</h2>
+              </div>
+            </div>
+            <div class="budget-progress">
+              <div class="budget-progress__labels">
+                <span id="plannerGoalLabel">No goal yet</span>
+                <strong id="plannerGoalProgress">&#8377;0.00</strong>
+              </div>
+              <div class="progress-track" aria-hidden="true">
+                <div id="plannerGoalBar" class="progress-fill"></div>
+              </div>
+              <p id="plannerGoalMeta" class="muted">Save a plan to see your estimated progress.</p>
+            </div>
+          </section>
+        </section>
+      </section>
+
+      <section class="content-grid content-grid--reports">
+        <section class="panel">
+          <div class="panel__header">
+            <div>
+              <p class="section-kicker">Advice</p>
+              <h2>Monthly guidance</h2>
+            </div>
+          </div>
+          <div id="plannerAdviceList" class="insights-list"></div>
+        </section>
+
+        <section class="panel">
+          <div class="panel__header">
+            <div>
+              <p class="section-kicker">Recent Trend</p>
+              <h2>Last 3 month summary</h2>
+            </div>
+          </div>
+          <div id="plannerTrendTable" class="table-shell"></div>
+        </section>
+      </section>
+    </main>
+  </div>
+
+  <template id="plannerAdviceTemplate">
+    <article class="insight-item">
+      <div class="insight-item__head">
+        <h3 class="insight-category"></h3>
+        <strong class="insight-value"></strong>
+      </div>
+      <p class="transaction-notes planner-note"></p>
+    </article>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>
